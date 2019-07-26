@@ -13,13 +13,13 @@ def index(request):
         pessoa.genero = request.POST.get('genero')
         pessoa.biografia = request.POST.get('biografia')
         pessoa.save()
-        contexto = {'msg': 'Parabéns :)'}
+        contexto = {'msg', 'Parabéns :)'}
 
     return render(request, 'index.html', contexto)
 
 
 def sobre(request):
-    pessoa = Pessoa.objects.all()
+    pessoa = Pessoa.objects.filter(ativo=True).all()
     contexto = {
         'pessoas':pessoa
     }
