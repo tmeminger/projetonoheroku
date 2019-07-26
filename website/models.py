@@ -48,7 +48,7 @@ class Ideia(models.Model):
         ('CONTRA_GROGER', 'Ideias para Coach Groger'),
         ('CONTRA_JOAO', 'Ideias contra João'),
         ('PUBLICAS', 'Públicas'),
-        ('OUTROS', 'outros'),
+        ('OUTROS', 'Outros'),
     )
 
     pessoa = models.ForeignKey(
@@ -81,4 +81,6 @@ class Ideia(models.Model):
     data_de_atualizacao = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.pessoa.nome + ' - ' + self.titulo
 

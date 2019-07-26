@@ -3,11 +3,15 @@
 {% block conteudo %}
 
 
-<h1>Listagem das Pessoas</h1>
-<ul>
-{% for pessoa in pessoas %}
-        <li>{{pessoa.nome}} {{pessoa.sobrenome}}</li>
-{% endfor %}
-</ul>
+<h1>Listagem das Ideas</h1>
+<p>
+        {% for ideia in ideias %}
+                <p>{{ideia.pessoa.nome}}</p>
+                <p>{{ideia.titulo}}</p>
+                <p>{{ideia.categoria}}</p>
+                <p>{{ideia.descricao}}</p>
+                <hr>
+        {% endfor %}
+</p>
 
 {% endblock %}
