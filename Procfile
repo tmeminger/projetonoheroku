@@ -1,1 +1,1 @@
-web: gunicorn <ideias_malucas-camilaegeni.wsgi
+web: gunicorn ideais_malucas.wsgi
